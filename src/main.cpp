@@ -59,7 +59,7 @@ SPEED_MODE SPEEDMODE = Normal;
 Environment* testEnvironment;
 bool loadFromFile;
 string fileName;
-extern vec2* SCREEN_POSITION;
+vec2* SCREEN_POSITION;
 
 //Evolution constraints: used by evolution.cpp
 //if false, prevents that region of brain from being modified

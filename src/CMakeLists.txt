@@ -1,1 +1,2 @@
-file (GLOB HEADERS *.cpp)
+FILE(GLOB SRCS *.cxx)
+message(${SRCS})

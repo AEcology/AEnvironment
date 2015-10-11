@@ -34,7 +34,7 @@
 //############################################################################################################//
 
 #include "linear.h"
-
+#include <cmath>
 
 vec2::vec2(float xinit, float yinit){
 	x = xinit;
@@ -43,8 +43,8 @@ vec2::vec2(float xinit, float yinit){
 
 //Return Euclidian distance between two vectors
 float Distance(vec2 *v1, vec2 *v2){
-	float fac1 = abs(v1->x - v2->x);
-	float fac2 = abs(v1->y - v2->y);
+	float fac1 = fabs(v1->x - v2->x);
+	float fac2 = fabs(v1->y - v2->y);
 	return sqrt(fac1*fac1 + fac2*fac2);
 }
 

@@ -38,10 +38,11 @@
 #define GLUTIL_H
 
 #include "glref.h"
-#include "atoms.h"
+//#include "atoms.h"
 #include <stdio.h>
 #include <stdarg.h>
 #include <stdlib.h>
+//#include "linear.h"
 
 
 const int SCREEN_WIDTH = 1600;

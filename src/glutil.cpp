@@ -123,7 +123,9 @@ void RenderPauseButton(){
 
 //Source: http://mycodelog.com/2010/03/23/printw/
 void printw(float x, float y, float z, char* format, ...){
-	va_list args;   //  Variable argument list
+        //TODO Make this work (uses functions specific to Microsoft)
+
+	/*va_list args;   //  Variable argument list
 	int len;        // String length
 	int i;          //  Iterator
 	char * text;    // Text
@@ -160,7 +162,7 @@ void printw(float x, float y, float z, char* format, ...){
 
 	//  Free the allocated memory for the string
 	//delete text;
-	free(text);
+	free(text);*/
 }
 
 void GL_Render(){

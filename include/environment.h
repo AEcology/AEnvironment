@@ -33,14 +33,17 @@
 //
 //############################################################################################################//
 
+
+#ifndef ENVIRONMENT_H
+#define ENVIRONMENT_H
+
 #include "atoms.h"
 #include "food.h"
 #include "glutil.h"
 #include "automata.h"
 #include "linear.h"
-
-#ifndef ENVIRONMENT_H
-#define ENVIRONMENT_H
+#include <string>
+#include <vector>
 
 
 //World dimensions
@@ -65,7 +68,7 @@ private:
 	unsigned int deathsThisGeneration;
 	int averageFitness;
 
-	vector<Object*> objects;
+	std::vector<Object*> objects;
 	//Keep track of bests
 	int currBest;
 	int currBest2;
@@ -85,7 +88,7 @@ private:
 
 	void Encircle();
 	//Add and render n new Atoms to atoms vector using evolutionary operators
-	void GenerateNewAtoms(const vector<Genome*> fitPool, int n);
+	void GenerateNewAtoms(const std::vector<Genome*> fitPool, int n);
 	Genome* Evolve();
 
 	//called from "load" command
@@ -94,7 +97,7 @@ private:
 
 public:
 	Environment();
-	Environment(int numAtoms, int numSugars, int numArsenic, int numHunters, bool loadFromFile, string fileName);
+	Environment(int numAtoms, int numSugars, int numArsenic, int numHunters, bool loadFromFile, std::string fileName);
 	~Environment();
 	bool Update();
 	void ClickSet(float x, float y); //Focus on Atom when clicked on, otherwise clear details from screen
