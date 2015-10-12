@@ -58,8 +58,8 @@ using namespace std;
 SPEED_MODE SPEEDMODE = Normal;
 Environment* testEnvironment;
 bool loadFromFile;
-string fileName;
-vec2* SCREEN_POSITION;
+std::string fileName;
+extern vec2* SCREEN_POSITION;
 
 //Evolution constraints: used by evolution.cpp
 //if false, prevents that region of brain from being modified
@@ -395,8 +395,13 @@ bool CommandPrompt(){
 
 int main(int argc, char* args[]){
 
+        std::cout << "Main()\n";
+
 	//Get user commands about environment to be used
 	CommandPrompt();
+
+        std::cout << "CommandPrompt successful\n";
+
 
 	glutInit(&argc, args);
 
@@ -421,6 +426,7 @@ int main(int argc, char* args[]){
 
 	delete SCREEN_POSITION;
 	delete testEnvironment;
+
 	return 0;
 }
 

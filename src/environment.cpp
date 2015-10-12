@@ -141,7 +141,7 @@ bool Environment::LoadEnvironmentFromFile(int numAtoms){
 	int nullStart = 0;
 
 
-	inFS.open(fileName);
+	inFS.open(fileName.c_str());
 	if (!inFS.is_open()){
 		cout << "Environment Error: Could not open file " << fileName << endl;
 		return false;
@@ -875,8 +875,16 @@ bool Environment::SaveCurrentState(bool autoSave){
 	ofstream outFS;
 	time_t t = time(0);
 	struct tm now;
-	localtime_s(&now, &t);
-	stringstream strLabel;
+
+        //TODO: Cross-platform compatibility:
+	//localtime_s(&now, &t);
+	
+        now.tm_year = 1;
+        now.tm_mon  = 1;
+        now.tm_mday  = 1;
+        now.tm_hour = 1;
+        now.tm_min  = 1;
+        stringstream strLabel;
 	//construct file name:
 	strLabel << (now.tm_year + 1900) << "-" << (now.tm_mon + 1) << '-' << now.tm_mday << "_" << now.tm_hour << "-" << now.tm_min << ".dat";
 	string fileName;
@@ -884,7 +892,7 @@ bool Environment::SaveCurrentState(bool autoSave){
 		fileName = "session-autosave.dat";
 	else
 		fileName = strLabel.str();
-	outFS.open(fileName);
+	outFS.open(fileName.c_str());
 	if (!outFS.good()){
 		cout << "Could not open file " << fileName << endl;
 		return false;
