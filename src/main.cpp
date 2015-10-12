@@ -85,7 +85,7 @@ void runMainLoop(int val);
 void PrintHelp(){
 	cout << endl <<  "Commands:" << endl << endl;
 
-	cout << "\"start\" runs the environment with default parameters and random weights" << endl << endl;
+	cout << "Enter \"start\" to begin! But you can also customize things:" << endl << endl;
 
 	cout << "\"params\"" << endl;
 	cout << "Print all environment parameters." << endl << endl;
@@ -108,7 +108,8 @@ void PrintHelp(){
 	cout << "instance: vision, focus, pursue, flee, social, null, preservation, predators" << endl;
 	cout << "Example: \"disable mutations pursue\" disables mutations in pursue brain region" << endl << endl;
 
-	cout << "Note: When starting from no load file, only primitive (flee, pursue, social) regions\nof brain are enabled,\nand species preservation is enabled." << endl;
+	cout << "Note: When starting from no load file, only primitive (flee, pursue, social) " << std::endl << "regions of brain are enabled, and species preservation is enabled." << endl;
+	cout << "\nMake sure you have this window maximized so you can see everything!" << std::endl;
 	return;
 }
 
@@ -216,7 +217,7 @@ bool CommandPrompt(){
 							cout << "Set command out of range";
 					}
 					else
-						cout << "Set command not recognized";
+						cout << "Set command not recognized\nEnter \"help\" if you're stuck";
 				}
 			}
 			else
@@ -377,7 +378,7 @@ bool CommandPrompt(){
 		else if (command == "help")
 			PrintHelp();
 		else{
-			cout << "Command not recognized";
+			cout << "Command not recognized\nEnter \"help\" if you're stuck!\n";
 			cin.clear();
 		}
 	}
