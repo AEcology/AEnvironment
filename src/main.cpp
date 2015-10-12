@@ -395,13 +395,8 @@ bool CommandPrompt(){
 
 int main(int argc, char* args[]){
 
-        std::cout << "Main()\n";
-
 	//Get user commands about environment to be used
 	CommandPrompt();
-
-        std::cout << "CommandPrompt successful\n";
-
 
 	glutInit(&argc, args);
 

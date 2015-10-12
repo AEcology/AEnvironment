@@ -875,9 +875,7 @@ bool Environment::SaveCurrentState(bool autoSave){
 	ofstream outFS;
 	time_t t = time(0);
 	struct tm now;
-
-        //TODO: Cross-platform compatibility:
-	//localtime_s(&now, &t);
+	localtime_s(&now, &t);
 	
         now.tm_year = 1;
         now.tm_mon  = 1;
